@@ -6,7 +6,16 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
+  background: #000;
+  background-color: rgb(51 65 85)
+}
+#root {
+  width: 100%;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  color:white
 }
 
