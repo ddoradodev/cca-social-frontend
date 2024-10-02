@@ -1,10 +1,33 @@
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/about";
+import Contact from "./pages/contact";
+import Home from "./pages/home";
+import Navbar from "./components/navbar";
+
 function App() {
+
+function sumar(a:number, b:number){
+  return a + b;
+
+}
+
+const result = sumar(2 , 4);
+
+
   return (
     <>
-      <div className="bg-red-400">
-        <p className="text-xl text-white">Welcome to CCA SOCIAL MEDIA </p>
-      </div>
+      <div className="w-screen h-screen flex-col justify-center">
+        <Navbar/>
+        
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+
+    </Routes>
+    </div>
     </>
+
   );
 }
 
