@@ -1,35 +1,36 @@
-import React from 'react'
+import React from 'react';
 
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
- import chantre from '@/assets/chantre.jpeg'
-  
-  export const CustomeCard = ({data}:{data:any}) => {
-    return (
-        <div className='w-1/6  h-2/4 mx-auto'>
- <Card className="bg-slate-400 ">
-        <CardHeader>
-          <CardTitle className="mx-auto">Chantre is so gay</CardTitle>
-          
+interface CustomeCardProps {
+  data: {
+    id: number;
+    url: string;
+    des: string;
+  };
+}
+
+export const CustomeCard: React.FC<CustomeCardProps> = ({ data }) => {
+  return (
+    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mx-auto h-auto p-4">
+      <Card className="bg-white border border-gray-300 shadow-lg transition-transform transform hover:scale-105 duration-200">
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl font-semibold text-gray-800">{data.des}</CardTitle>
         </CardHeader>
-        <CardContent>
-         <img src={data.url} alt="" className='mx-auto rounded-full'/>
+        <CardContent className="flex justify-center">
+          <img src={data.url} alt="chantre" className="rounded-full w-32 h-32 border-4 border-gray-200 shadow-md" />
         </CardContent>
-        <CardFooter >
-          <p className='mx-auto'>Dorado el mejor</p>
+        <CardFooter className="text-center">
+          <p className="text-gray-600">{data.des || 'Dorado el mejor'}</p>
         </CardFooter>
       </Card>
-
-        </div>
-       
-        
-    )
-  }
-  
+    </div>
+  );
+};

@@ -1,40 +1,29 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from "./components/About"; // Make sure path is correct
-import Contact from "./components/Contact"; // Make sure path is correct
-import NavBar from "./components/NavBar"; // Import the NavBar component
-import {CustomeBar} from './components/ui/Custome-Bar'
-import {Chantre } from ''
+import About from "./components/About"; 
+import Contact from "./components/Contact"; 
+import { CustomeBar } from './components/ui/Custome-Bar';
+
 function App() {
-  const sumChan = (a: number, b: number) => {
-    return a + b;
-  };
-
-  const chantre = sumChan(1, 2);
-
   return (
-    <>
-   
+    <div className="min-h-screen flex flex-col bg-gray-50"> {/* Changed to a lighter background for modern look */}
       <CustomeBar />
 
-      <div className=" h-screen mx-auto  py-4">
+      <main className="flex-grow w-full px-4 md:px-8 lg:px-12 py-8"> {/* Added padding for spacing */}
         <Routes>
-          <Route path="/" element={<div>Home Page</div>} />
+          <Route path="/" element={
+            <div className="text-center text-4xl font-extrabold text-gray-800"> {/* Increased font size and made it bold */}
+              Home Page
+            </div>
+          } />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
         </Routes>
-      </div>
+      </main>
 
-      <div className="bg-red-400">
-        <p className="text-xl text-white">juanfo20</p>
-        <p className="text-emerald-700">Chantre obtuvo {chantre}</p>
-      </div>
-
-      <div className="flex h-screen w-screen justify-center items-center">
-        <div className="w-[200px] h-[200px] bg-amber-500 rounded-[100%] text-center flex justify-center items-center">
-          <p>chantre</p>
-        </div>
-      </div>
-    </>
+      <footer className="bg-gray-900 text-white py-6 text-center shadow-md"> {/* Darker footer with shadow */}
+        <p className="text-sm">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+      </footer>
+    </div>
   );
 }
 

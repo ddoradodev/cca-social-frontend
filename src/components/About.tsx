@@ -1,12 +1,11 @@
 import React from 'react';
-import { CustomeCard } from './ui/Custome-card';
-import { CustomeBar } from './ui/Custome-Bar'
-const About: React.FC = () => {
+
+import Chantre from '../Chantre.tsx'; // Change to .tsx if your file is in TypeScript
+
+const About: React.FC = () => { // Add parentheses for function declaration
   return (
     <div>
-
-     
-   <CustomeCard/>
+      <Chantre />
     </div>
   );
 };
