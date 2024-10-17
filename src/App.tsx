@@ -11,7 +11,7 @@ function sumar(a:number, b:number){
 
 }
 
-const result = sumar(2 , 4);
+
 
 
   return (
