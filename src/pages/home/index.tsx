@@ -1,34 +1,34 @@
-import CardExample from "./CardExample";
-import drake from "@/assets/drake.jpeg";
-import kanye from "../../assets/kanye.jpeg";
+import Card from "./character-card";
+import { useEffect, useState } from "react";
+import { getCharacters1 } from "@/api/rick-and-morty";
+import ButtonBar from "./button-bar";
+export type CharacterType = {
+  id: number;
+  name: string;
+  species: string;
+  image: string;
+};
+export const Home = () => {
+  const [characters, setCharacters] = useState<CharacterType[]>([]);
+  const [page, setPage] = useState(1);
+  console.log(page);
 
-const artists = [
-  {
-    id: 1,
-    name: "travis",
-    description: "loremipsun",
-    url: "public/travis.jpg",
-  },
-  {
-    id: 2,
-    name: "kanye",
-    description: "loremipsun",
-    url: kanye,
-  },
-  {
-    id: 3,
-    name: "drake",
-    description: "loremipsun",
-    url: drake,
-  },
-];
-const Home = () => {
+  useEffect(() => {
+    getCharacters1(page).then((res) => {
+      setCharacters(res);
+    });
+  }, [page]);
+
   // name the a functional component using pascal case
   return (
-    <div className="flex flex-row gap-2">
-      {artists.map((artist) => (
-        <CardExample key={artist.id} artist={artist} />
-      ))}
+    <div className="flex flex-col  ">
+      <ButtonBar setPage={setPage} currentPage={page} />
+      <div className="flex flex-col sm:flex-row sm:flex-wrap ">
+        {characters?.map((character) => (
+          <Card key={character.id} character={character} />
+        ))}
+      </div>
+      <ButtonBar setPage={setPage} currentPage={page} />
     </div>
   );
 };
