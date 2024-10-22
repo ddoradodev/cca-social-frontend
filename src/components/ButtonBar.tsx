@@ -1,8 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
-import { Button } from "@/components/ui/button";
+
+
 import { ChevronRight, ChevronLeft } from "lucide-react";
-  export const  ButtonBar = (totalPages,setPages) => {
+import { Button } from "./ui/button";
+  export const  ButtonBar = ({totalPages,setPages}:{setPages:React.Dispatch<React.SetStateAction<number>>,totalPages:number}) => {
     
     const handlePrev = () => {
         if (totalPages > 1) {
