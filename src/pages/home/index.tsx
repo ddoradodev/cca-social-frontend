@@ -2,8 +2,9 @@ import Card from "./character-card";
 import { useEffect, useState } from "react";
 import { getCharacters1 } from "@/api/rick-and-morty";
 import ButtonBar from "./button-bar";
+import { Link } from "react-router-dom";
 export type CharacterType = {
-  id: number;
+  id: string;
   name: string;
   species: string;
   image: string;
@@ -25,7 +26,11 @@ export const Home = () => {
       <ButtonBar setPage={setPage} currentPage={page} />
       <div className="flex flex-col sm:flex-row sm:flex-wrap ">
         {characters?.map((character) => (
-          <Card key={character.id} character={character} />
+          <div key={character.id}>
+            <Link to={`/characters/${character.id}`}>
+              <Card character={character} />
+            </Link>
+          </div>
         ))}
       </div>
       <ButtonBar setPage={setPage} currentPage={page} />
