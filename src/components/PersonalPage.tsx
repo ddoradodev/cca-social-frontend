@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+
+import  { useEffect, useState } from "react";
 import { CustomeCard } from "./ui/Custome-card";
 import { useNavigate, useParams } from "react-router-dom";
 import { getCharacterById } from "../services/RickMorty";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import {  ChevronLeft } from "lucide-react";
 import { Button } from "./ui/button";
 // Define the Character interface based on your API response
 export type CharacterType = {

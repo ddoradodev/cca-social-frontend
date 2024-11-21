@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { CustomeCard } from "@/components/ui/Custome-card";
+import  { useState, useEffect } from "react";
+import { CustomeCard } from "./components/ui/Custome-card";
 import axios from "axios";
 import { ButtonBar } from "./components/ButtonBar";
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CharacterType } from "./components/PersonalPage";
 // Sample Image Array with placeholder descriptions
 

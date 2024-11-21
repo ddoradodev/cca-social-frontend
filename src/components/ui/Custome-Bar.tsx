@@ -7,7 +7,7 @@ import {
     MenubarSeparator,
     MenubarShortcut,
     MenubarTrigger 
-} from "@/components/ui/menubar"; // Ensure this is the correct path to your UI components
+} from "../../components/ui/menubar"; // Ensure this is the correct path to your UI components
 import { Link } from 'react-router-dom';
 import { CiMenuBurger } from "react-icons/ci";
 

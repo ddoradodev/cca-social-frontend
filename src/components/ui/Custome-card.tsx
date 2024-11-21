@@ -1,4 +1,4 @@
-import React from "react";
+
 
 import {
   Card,
@@ -6,7 +6,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "../ui/card";
 import { CharacterType } from "../PersonalPage";
 
 export const CustomeCard = ({ data }: { data: CharacterType | undefined }) => {
